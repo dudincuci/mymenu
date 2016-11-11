@@ -1,0 +1,36 @@
+<% if true # in the future will check if side pannel needed %>
+<div class="side-pannel">
+
+  <div class="logo">
+    <img src="logo.png">
+  </div>
+  <div class="menu">
+    <div class="user-section row">
+      <div class="user_information col-xs-8">
+        <div class="restaurant_name">שם המסעדה</div>
+        <div class="user_email">mail@domain.com</div>
+      </div>
+      <div class="website-logo col-xs-4">
+        <img src="http://2.bp.blogspot.com/-I4Tr_GdLzcs/ULy9kW0Jv1I/AAAAAAAAPg8/S13OoHZ97Rc/s1600/1-restaurant-logo-design.jpg">
+      </div>
+    </div>
+    <div class="links">
+        <% 4.times do |number| %>
+        <a class="parent">תפריט <%= number+1 %></a>
+        <div class="sub-links">
+          <% 4.times do |number2| %><a href="/">תת תפריט <%= number2+1 %></a><% end %>
+        </div>
+        <% end %>
+        <a href="/">לינק לדף הבית</a>
+    </div>
+    <script>
+    $( ".links" ).accordion({
+      collapsible: true,
+      active: false,
+      header: 'a.parent'
+    });
+    </script>
+  </div>
+
+</div>
+<% end %>

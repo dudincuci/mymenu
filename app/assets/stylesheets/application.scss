@@ -1,0 +1,145 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+/*
+*= require jquery-ui
+*/
+
+// sizes
+// ==================
+// screen sizes
+$mobile_width: 768px;
+// heights
+$header-height: 60px;
+$side-pannel-link-height: 40px;
+$side-pannel-sublink-height: 30px;
+// widths
+$side-pannel-width: 300px;
+$side-pannel-left-spacing: 10px;
+// borders
+$pannel-outline: 2px solid #fff;
+
+// colors pallete
+$side-pannel-font-color: #fff;
+$main-pannel-background-color: #e4e4e4;
+$title-background: #dcdcdc;
+
+// general configuration
+html, body {
+  height: 100%;
+  direction: rtl;
+  text-align: right;
+  overflow: hidden;
+}
+a:hover {
+  text-decoration: none;
+}
+// layout configuration
+.split-screen {
+  width: 100%;
+  height: 100%;
+  display: table;
+  .side-pannel {
+    color: $side-pannel-font-color;
+    display: table-cell;
+    width: $side-pannel-width;
+    height: 100%;
+    margin-left: $side-pannel-left-spacing;
+    float: none;
+    vertical-align: top;
+    border-left: $pannel-outline;
+    background: url('/background.jpg') right bottom no-repeat;
+    background-size: cover;
+    .logo {
+      height: $header-height;
+      background-color: $title-background;
+      border-bottom: $pannel-outline;
+      text-align: left;
+      padding: 5px;
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+    .menu {
+      .user-section {
+        height: 100px;
+        padding: 25px;
+        margin: 0px;
+        border-bottom: $pannel-outline;
+        .website-logo {
+           img {
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+      }
+      .links {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+        a {
+          display: block;
+          height: $side-pannel-link-height;
+          line-height: $side-pannel-link-height;
+          padding: 0px 10px;
+          width: 100%;
+          padding-right: 30px;
+          background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYwIDYwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MCA2MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8cGF0aCBkPSJNNTUuMDE0LDQ1LjM4OWwtOS41NTMtNC43NzZDNDQuNTYsNDAuMTYyLDQ0LDM5LjI1Niw0NCwzOC4yNDh2LTMuMzgxYzAuMjI5LTAuMjgsMC40Ny0wLjU5OSwwLjcxOS0wLjk1MSAgYzEuMjM5LTEuNzUsMi4yMzItMy42OTgsMi45NTQtNS43OTlDNDkuMDg0LDI3LjQ3LDUwLDI2LjA3NSw1MCwyNC41di00YzAtMC45NjMtMC4zNi0xLjg5Ni0xLTIuNjI1di01LjMxOSAgYzAuMDU2LTAuNTUsMC4yNzYtMy44MjQtMi4wOTItNi41MjVDNDQuODU0LDMuNjg4LDQxLjUyMSwyLjUsMzcsMi41cy03Ljg1NCwxLjE4OC05LjkwOCwzLjUzYy0xLjQzNSwxLjYzNy0xLjkxOCwzLjQ4MS0yLjA2NCw0LjgwNSAgQzIzLjMxNCw5Ljk0OSwyMS4yOTQsOS41LDE5LDkuNWMtMTAuMzg5LDAtMTAuOTk0LDguODU1LTExLDl2NC41NzljLTAuNjQ4LDAuNzA2LTEsMS41MjEtMSwyLjMzdjMuNDU0ICBjMCwxLjA3OSwwLjQ4MywyLjA4NSwxLjMxMSwyLjc2NWMwLjgyNSwzLjExLDIuODU0LDUuNDYsMy42NDQsNi4yODV2Mi43NDNjMCwwLjc4Ny0wLjQyOCwxLjUwOS0xLjE3MSwxLjkxNWwtNi42NTMsNC4xNzMgIEMxLjU4Myw0OC4xMzQsMCw1MC44MDEsMCw1My43MDNWNTcuNWgxNGgyaDQ0di00LjA0M0M2MCw1MC4wMTksNTguMDg5LDQ2LjkyNyw1NS4wMTQsNDUuMzg5eiBNMTQsNTMuMjYyVjU1LjVIMnYtMS43OTcgIGMwLTIuMTcsMS4xODQtNC4xNjQsMy4xNDEtNS4yMzNsNi42NTItNC4xNzNjMS4zMzMtMC43MjcsMi4xNjEtMi4xMjEsMi4xNjEtMy42NDF2LTMuNTkxbC0wLjMxOC0wLjI5NyAgYy0wLjAyNi0wLjAyNC0yLjY4My0yLjUzNC0zLjQ2OC01Ljk1NWwtMC4wOTEtMC4zOTZsLTAuMzQyLTAuMjJDOS4yNzUsMjkuODk5LDksMjkuNCw5LDI4Ljg2M3YtMy40NTQgIGMwLTAuMzYsMC4yNDUtMC43ODgsMC42NzEtMS4xNzRMMTAsMjMuOTM4bC0wLjAwMi01LjM4QzEwLjAxNiwxOC4yNzEsMTAuNTM3LDExLjUsMTksMTEuNWMyLjM5MywwLDQuNDA4LDAuNTUzLDYsMS42NDR2NC43MzEgIGMtMC42NCwwLjcyOS0xLDEuNjYyLTEsMi42MjV2NGMwLDAuMzA0LDAuMDM1LDAuNjAzLDAuMTAxLDAuODkzYzAuMDI3LDAuMTE2LDAuMDgxLDAuMjIyLDAuMTE4LDAuMzM0ICBjMC4wNTUsMC4xNjgsMC4wOTksMC4zNDEsMC4xNzYsMC41YzAuMDAxLDAuMDAyLDAuMDAyLDAuMDAzLDAuMDAzLDAuMDA1YzAuMjU2LDAuNTI4LDAuNjI5LDEsMS4wOTksMS4zNzcgIGMwLjAwNSwwLjAxOSwwLjAxMSwwLjAzNiwwLjAxNiwwLjA1NGMwLjA2LDAuMjI5LDAuMTIzLDAuNDU3LDAuMTkxLDAuNjhsMC4wODEsMC4yNjFjMC4wMTQsMC4wNDYsMC4wMzEsMC4wOTMsMC4wNDYsMC4xMzkgIGMwLjAzNSwwLjEwOCwwLjA2OSwwLjIxNSwwLjEwNSwwLjMyMWMwLjA2LDAuMTc1LDAuMTIzLDAuMzU2LDAuMTk2LDAuNTUzYzAuMDMxLDAuMDgyLDAuMDY1LDAuMTU2LDAuMDk3LDAuMjM3ICBjMC4wODIsMC4yMDksMC4xNjQsMC40MTEsMC4yNSwwLjYxMWMwLjAyMSwwLjA0OCwwLjAzOSwwLjEsMC4wNiwwLjE0N2wwLjA1NiwwLjEyNmMwLjAyNiwwLjA1OCwwLjA1MywwLjExLDAuMDc5LDAuMTY3ICBjMC4wOTgsMC4yMTQsMC4xOTQsMC40MjEsMC4yOTQsMC42MjFjMC4wMTYsMC4wMzIsMC4wMzEsMC4wNjcsMC4wNDcsMC4wOTljMC4wNjMsMC4xMjUsMC4xMjYsMC4yNDMsMC4xODksMC4zNjMgIGMwLjEwOCwwLjIwNiwwLjIxNCwwLjQsMC4zMiwwLjU4OGMwLjA1MiwwLjA5MiwwLjEwMywwLjE4MiwwLjE1NCwwLjI2OWMwLjE0NCwwLjI0NiwwLjI4MSwwLjQ3MiwwLjQxNCwwLjY4MiAgYzAuMDI5LDAuMDQ1LDAuMDU3LDAuMDkyLDAuMDg1LDAuMTM1YzAuMjQyLDAuMzc1LDAuNDUyLDAuNjc5LDAuNjI2LDAuOTE2YzAuMDQ2LDAuMDYzLDAuMDg2LDAuMTE3LDAuMTI1LDAuMTcgIGMwLjAyMiwwLjAyOSwwLjA1MiwwLjA3MSwwLjA3MSwwLjA5N3YzLjMwOWMwLDAuOTY4LTAuNTI4LDEuODU2LTEuMzc3LDIuMzJsLTIuNjQ2LDEuNDQzbC0wLjQ2MS0wLjA0MWwtMC4xODgsMC4zOTVsLTUuNjI2LDMuMDY5ICBDMTUuODAxLDQ2LjkyNCwxNCw0OS45NTgsMTQsNTMuMjYyeiBNNTgsNTUuNUgxNnYtMi4yMzhjMC0yLjU3MSwxLjQwMi00LjkzNCwzLjY1OS02LjE2NGw4LjkyMS00Ljg2NiAgQzMwLjA3Myw0MS40MTcsMzEsMzkuODU0LDMxLDM4LjE1NXYtNC4wMTh2LTAuMDAxbC0wLjE5NC0wLjIzMmwtMC4wMzgtMC4wNDVjLTAuMDAyLTAuMDAzLTAuMDY0LTAuMDc4LTAuMTY1LTAuMjEgIGMtMC4wMDYtMC4wMDgtMC4wMTItMC4wMTYtMC4wMTktMC4wMjRjLTAuMDUzLTAuMDY5LTAuMTE1LTAuMTUyLTAuMTg2LTAuMjUxYy0wLjAwMS0wLjAwMi0wLjAwMi0wLjAwMy0wLjAwMy0wLjAwNSAgYy0wLjE0OS0wLjIwNy0wLjMzNi0wLjQ3Ni0wLjU0NC0wLjhjLTAuMDA1LTAuMDA3LTAuMDA5LTAuMDE1LTAuMDE0LTAuMDIyYy0wLjA5OC0wLjE1My0wLjIwMi0wLjMyLTAuMzA4LTAuNDk3ICBjLTAuMDA4LTAuMDEzLTAuMDE2LTAuMDI2LTAuMDI0LTAuMDRjLTAuMjI2LTAuMzc5LTAuNDY2LTAuODA4LTAuNzA1LTEuMjgzYzAsMC0wLjAwMS0wLjAwMS0wLjAwMS0wLjAwMiAgYy0wLjEyNy0wLjI1NS0wLjI1NC0wLjUyMy0wLjM3OC0wLjgwMmwwLDBjLTAuMDE3LTAuMDM5LTAuMDM1LTAuMDc3LTAuMDUyLTAuMTE2aDBjLTAuMDU1LTAuMTI1LTAuMTEtMC4yNTYtMC4xNjYtMC4zOTEgIGMtMC4wMi0wLjA0OS0wLjA0LTAuMS0wLjA2LTAuMTVjLTAuMDUyLTAuMTMxLTAuMTA1LTAuMjYzLTAuMTYxLTAuNDE0Yy0wLjEwMi0wLjI3Mi0wLjE5OC0wLjU1Ni0wLjI5LTAuODQ5bC0wLjA1NS0wLjE3OCAgYy0wLjAwNi0wLjAyLTAuMDEzLTAuMDQtMC4wMTktMC4wNjFjLTAuMDk0LTAuMzE2LTAuMTg0LTAuNjM5LTAuMjYtMC45NzFsLTAuMDkxLTAuMzk2bC0wLjM0MS0wLjIyICBDMjYuMzQ2LDI1LjgwMywyNiwyNS4xNzYsMjYsMjQuNXYtNGMwLTAuNTYxLDAuMjM4LTEuMDg0LDAuNjctMS40NzVMMjcsMTguNzI4VjEyLjV2LTAuMzU0bC0wLjAyNy0wLjAyMSAgYy0wLjAzNC0wLjcyMiwwLjAwOS0yLjkzNSwxLjYyMy00Ljc3NkMzMC4yNTMsNS40NTgsMzMuMDgxLDQuNSwzNyw0LjVjMy45MDUsMCw2LjcyNywwLjk1MSw4LjM4NiwyLjgyOCAgYzEuOTQ3LDIuMjAxLDEuNjI1LDUuMDE3LDEuNjIzLDUuMDQxTDQ3LDE4LjcyOGwwLjMzLDAuMjk4QzQ3Ljc2MiwxOS40MTYsNDgsMTkuOTM5LDQ4LDIwLjV2NGMwLDAuODczLTAuNTcyLDEuNjM3LTEuNDIyLDEuODk5ICBsLTAuNDk4LDAuMTUzbC0wLjE2LDAuNDk1Yy0wLjY2OSwyLjA4MS0xLjYyMiw0LjAwMy0yLjgzNCw1LjcxM2MtMC4yOTcsMC40MjEtMC41ODYsMC43OTQtMC44MzcsMS4wNzlMNDIsMzQuMTIzdjQuMTI1ICBjMCwxLjc3LDAuOTgzLDMuMzYxLDIuNTY2LDQuMTUzbDkuNTUzLDQuNzc2QzU2LjUxMyw0OC4zNzQsNTgsNTAuNzgsNTgsNTMuNDU3VjU1LjV6IiBmaWxsPSIjMDAwMDAwIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
+          background-position: right center;
+          background-repeat: no-repeat;
+          font-size: 16px;
+          color: #fff;
+          vertical-align: middle;
+          cursor: pointer;
+        }
+        .sub-links {
+          padding-right: 40px;
+          a {
+            display: block;
+            width: 100%;
+            height: $side-pannel-sublink-height;
+            line-height: $side-pannel-sublink-height;
+          }
+        }
+      }
+    }
+  }
+  .main-pannel {
+    height: 100%;
+    width: 100%;
+    display: table-cell;
+    overflow: hidden;
+    float: left;
+    header {
+      height: $header-height;
+      background: $title-background;
+      text-align: center;
+      display: table;
+      width: 100%;
+      border-bottom: $pannel-outline;
+      h1 {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    main {
+        padding: 30px;
+        height: 100%;
+        background: $main-pannel-background-color;
+    }
+  }
+}
