@@ -1,0 +1,15 @@
+<h2>התחברות</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+    <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'אימייל' %>
+  </div>
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'סיסמא' %>
+    </div>
+
+    <button type="submit" class="float">התחבר</button>
+ <% end %>

@@ -1,0 +1,42 @@
+<%= form_for(website) do |f| %>
+  <% if website.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(website.errors.count, "error") %> prohibited this website from being saved:</h2>
+
+      <ul>
+      <% website.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :domain %>
+    <%= f.text_field :domain %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name_servers %>
+    <%= f.text_field :name_servers %>
+  </div>
+
+  <div class="field">
+    <%= f.label :online %>
+    <%= f.check_box :online %>
+  </div>
+
+  <div class="field">
+    <%= f.label :published_at %>
+    <%= f.datetime_select :published_at %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

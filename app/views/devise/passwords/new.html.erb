@@ -1,0 +1,9 @@
+<h2>שכחת את הסיסמא?</h2>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= devise_error_messages! %>
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+    <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'אימייל' %>
+  </div>
+  <button type="submit" class="float">שחזר סיסמא</button>
+ <% end %>

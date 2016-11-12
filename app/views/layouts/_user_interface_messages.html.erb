@@ -1,0 +1,21 @@
+<% if notice.present? || alert.present? %>
+<div class="user-interface-messages">
+  <% if notice.present? %>
+  <div class="notice-message">
+    <p><%= notice %></p>
+    <a class="close-button"></a>
+  </div>
+  <% end %>
+  <% if alert.present? %>
+  <div class="alert-message">
+    <p><%= alert %></p>
+    <a class="close-button"></a>
+  </div>
+  <% end %>
+  <script>
+    $('a.close-button').click(function () {
+      $(this).parent().hide(100);
+    });
+  </script>
+</div>
+<% end %>

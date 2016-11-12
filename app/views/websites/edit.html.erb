@@ -1,0 +1,8 @@
+<% content_for :title do %>
+עריכת פרטי האתר
+<% end %>
+<%= render 'form', website: @website %>
+
+<% content_for :buttons do %>
+<%= link_to 'כל האתרים', websites_path %>
+<% end %>
