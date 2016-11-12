@@ -4,7 +4,7 @@ class WebsitesController < ApplicationController
   # GET /websites
   # GET /websites.json
   def index
-    @websites = Website.all
+    @websites = current_user.websites
   end
 
   # GET /websites/1
@@ -29,9 +29,12 @@ class WebsitesController < ApplicationController
   # POST /websites.json
   def create
     @website = Website.new(website_params)
+    @website.users << current_user
 
     respond_to do |format|
       if @website.save
+        current_user.website = @website
+        current_user.save
         format.html { redirect_to @website, notice: 'Website was successfully created.' }
         format.json { render :show, status: :created, location: @website }
       else
