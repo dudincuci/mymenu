@@ -34,8 +34,19 @@ $pannel-outline: 2px solid #fff;
 
 // colors pallete
 $side-pannel-font-color: #fff;
-$main-pannel-background-color: #e4e4e4;
 $title-background: #dcdcdc;
+$main-pannel-background-color: #e4e4e4;
+$button-background-color: red;
+
+// user-interface-messages
+$user-interface-vertical-margin: 10px;
+$user-interface-min-height: 50px;
+$user-interface-border-radius: 5px;
+$user-interface-alert-background: red;
+$user-interface-notice-background: green;
+$user-interface-close-button-size: 10px;
+$user-interface-close-button-background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDYxMS45NzkgNjExLjk3OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjExLjk3OSA2MTEuOTc5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTM1Ni43ODEsMzA1Ljk4Mkw2MDEuNDUzLDYxLjMxMWMxNC4wMzMtMTQuMDMzLDE0LjAzMy0zNi43NzEsMC01MC43NzRjLTE0LjAwNC0xNC4wMzMtMzYuNzQxLTE0LjAzMy01MC43NzQsMCAgIEwzMDYuMDA3LDI1NS4yMDhMNjEuMjc3LDEwLjUzNmMtMTQuMDA0LTE0LjAzMy0zNi43NzEtMTQuMDMzLTUwLjc3NCwwYy0xNC4wMDQsMTQuMDA0LTE0LjAwNCwzNi43NDIsMCw1MC43NzRsMjQ0LjcwMSwyNDQuNjcyICAgTDEwLjUwMyw1NTAuNjg0Yy0xNC4wMDQsMTQuMDA0LTE0LjAwNCwzNi43NzEsMCw1MC43NzRjNy4wMTYsNy4wMTcsMTYuMjE2LDEwLjUxLDI1LjM4NywxMC41MWM5LjIsMCwxOC4zNzEtMy40OTMsMjUuMzg3LTEwLjUxICAgbDI0NC43MDEtMjQ0LjcwMWwyNDQuNjcxLDI0NC43MDFjNy4wMTcsNy4wMTcsMTYuMjE3LDEwLjUxLDI1LjM4OCwxMC41MWM5LjE5OSwwLDE4LjM5OS0zLjQ5MywyNS4zODctMTAuNTEgICBjMTQuMDMzLTE0LjAzMywxNC4wMzMtMzYuNzcxLDAtNTAuNzc0TDM1Ni43ODEsMzA1Ljk4MnoiIGZpbGw9IiMwMDAwMDAiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+
 
 // general configuration
 html, body {
@@ -43,9 +54,13 @@ html, body {
   direction: rtl;
   text-align: right;
   overflow: hidden;
+  font-family: "Open Sans Hebrew";
 }
 a:hover {
   text-decoration: none;
+}
+p {
+  margin: 0px;
 }
 // layout configuration
 .split-screen {
@@ -124,6 +139,7 @@ a:hover {
     display: table-cell;
     overflow: hidden;
     float: left;
+    background: $main-pannel-background-color;
     header {
       height: $header-height;
       background: $title-background;
@@ -136,10 +152,67 @@ a:hover {
         vertical-align: middle;
       }
     }
+    .user-interface-messages {
+        width: 90%;
+        margin: 0px auto;
+        display: table;
+        overflow: hidden;
+        .alert-message,
+        .notice-message {
+          min-height: $user-interface-min-height;
+          display: block;
+          vertical-align: middle;
+          position: relative;
+          padding: 10px 0px;
+          margin-top: $user-interface-vertical-margin;
+          border-radius: $user-interface-border-radius;
+        }
+        .alert-message {
+          background-color: $user-interface-alert-background;
+        }
+        .notice-message {
+          background-color: $user-interface-notice-background;
+        }
+        p {
+          display: inline-block;
+          width: auto;
+          max-width: 90%;
+          padding-right: $user-interface-close-button-size*2;
+        }
+        a.close-button {
+          position: absolute;
+          top: 0px;
+          bottom: 0px;
+          left: $user-interface-close-button-size*2;
+          margin: auto;
+          display: inline-block;
+          height: $user-interface-close-button-size;
+          width: $user-interface-close-button-size;
+          cursor: pointer;
+          background-image: $user-interface-close-button-background-image;
+          background-size: 100%;
+        }
+    }
     main {
-        padding: 30px;
+        padding: 10px;
         height: 100%;
-        background: $main-pannel-background-color;
+        .buttons {
+            margin: 0px 0px 20px 0px;
+            a {
+            background: $button-background-color;
+            border: none;
+            font-size: 1em;
+            font-weight: 300;
+            padding: 5px 10px;
+            width: auto;
+            border-radius: 3px;
+            color: lighten($button-background-color, 60%);
+            float: right;
+            &:hover {
+              background-color: lighten($button-background-color, 15%);
+            }
+          }
+        }
     }
   }
 }

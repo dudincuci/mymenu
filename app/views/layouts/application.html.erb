@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mymenu</title>
+    <title>Bonjo | <%= yield :title %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel='stylesheet' href='http://s3-eu-west-1.amazonaws.com/konimboassets/layout3/base/fonts/open_sans_hebrew/stylesheet.css' type='text/css'>
+    <%= yield :head %>
   </head>
 
   <body>
@@ -13,5 +14,6 @@
       <%= render 'layouts/side_pannel' %>
       <%= render 'layouts/main_pannel' %>
     </div>
+  <%= yield :foot %>
   </body>
 </html>

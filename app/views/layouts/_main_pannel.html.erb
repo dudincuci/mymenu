@@ -1,10 +1,13 @@
 <div class="main-pannel">
-  <header>
-    <h1>
-       כותרת הדף
-    </h1>
-  </header>
+  <header><h1><%= yield :title %></h1></header>
+  <%= render 'layouts/user_interface_messages' %>
   <main>
+    <div class="breadcrumbs">
+      <%= yield :breadcrumbs %>
+    </div>
+    <div class="buttons row">
+      <%= yield :buttons %>
+    </div>
     <%= yield %>
   </main>
 </div>
